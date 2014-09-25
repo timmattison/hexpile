@@ -45,7 +45,7 @@ public class HexPanelWithColorBoxes implements HexPanel {
             panel.add(rightPanel);
 
             panel.addStyleName("hexpile");
-            panel.addStyleName("highlight");
+            panel.addStyleName("hexpileBlock");
 
             HexPanelHelper.addAllMouseovers(hexLines);
         }
