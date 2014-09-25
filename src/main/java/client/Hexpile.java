@@ -3,7 +3,6 @@ package client;
 import client.dataprocessing.BinaryData;
 import client.factories.HexDataFactory;
 import client.injectors.HexpileGinjector;
-import client.injectors.HexpileSimpleGinjector;
 import client.interfaces.HexData;
 import client.interfaces.HexPanel;
 import com.google.gwt.core.client.EntryPoint;
@@ -24,13 +23,10 @@ public class Hexpile implements EntryPoint {
     public static final String HEXPILE = "hexpile_";
     private final HexpileGinjector injector = GWT.create(HexpileGinjector.class);
     private static HexpileGinjector staticInjector;
-    private final HexpileSimpleGinjector simpleInjector = GWT.create(HexpileSimpleGinjector.class);
-    private static HexpileSimpleGinjector simpleStaticInjector;
 
     public void onModuleLoad() {
         exportMyFunction();
         staticInjector = injector;
-        simpleStaticInjector = simpleInjector;
 
         reformatAll();
     }
@@ -49,25 +45,8 @@ public class Hexpile implements EntryPoint {
     }
 
     public static native void exportMyFunction()/*-{
-        $wnd.displayBinary = @client.Hexpile::displayBinary(Ljava/lang/String;Ljava/lang/String;);
-        $wnd.displayHighlightedBinary = @client.Hexpile::displayHighlightedBinary(Ljava/lang/String;Ljava/lang/String;);
         $wnd.reformat = @client.Hexpile::reformat(Ljava/lang/String;Ljava/lang/String;);
     }-*/;
-
-    public static void displayBinary(String divId, String data) {
-        List<Byte> bytes = convertDataToBytes(data);
-        List<BinaryData> binaryDataList = rawDataToBinaryData(bytes);
-        HexDataFactory hexDataFactory = simpleStaticInjector.getHexDataFactory();
-        HexData hexData = hexDataFactory.create(0, binaryDataList);
-        HexPanel hexPanel = hexData.getHexPanel();
-        RootPanel div = RootPanel.get(divId);
-        div.clear();
-        try {
-            div.add(hexPanel);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public static void displayHighlightedBinary(String divId, String data) {
         String[] lines = data.split("\\n");
@@ -123,15 +102,6 @@ public class Hexpile implements EntryPoint {
             binaryData.data = bytes;
             output.add(binaryData);
         }
-        return output;
-    }
-
-    private static List<BinaryData> rawDataToBinaryData(List<Byte> bytes) {
-        List<BinaryData> output = new ArrayList<BinaryData>();
-        BinaryData binaryData = new BinaryData();
-        binaryData.name = "";
-        binaryData.data = bytes;
-        output.add(binaryData);
         return output;
     }
 
