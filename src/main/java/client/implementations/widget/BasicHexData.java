@@ -9,17 +9,11 @@ import client.factories.HexPanelFactory;
 import client.interfaces.HexData;
 import client.interfaces.HexLine;
 import client.interfaces.HexPanel;
-import com.google.gwt.event.dom.client.MouseOutEvent;
-import com.google.gwt.event.dom.client.MouseOutHandler;
-import com.google.gwt.event.dom.client.MouseOverEvent;
-import com.google.gwt.event.dom.client.MouseOverHandler;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.inject.assistedinject.Assisted;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by timmattison on 9/15/14.
@@ -34,7 +28,6 @@ public class BasicHexData implements HexData {
 
     private boolean showAddresses = true;
     private int width = 16;
-    private int grouping = 1;
 
     @Inject
     public BasicHexData(HexLineFactory hexLineFactory, HexPanelFactory hexPanelFactory, BinaryDataSlicer binaryDataSlicer, HexChunkProcessor hexChunkProcessor,
@@ -69,16 +62,6 @@ public class BasicHexData implements HexData {
     }
 
     @Override
-    public int getGrouping() {
-        return grouping;
-    }
-
-    @Override
-    public void setGrouping(int grouping) {
-        this.grouping = grouping;
-    }
-
-    @Override
     public HexPanel getHexPanel() {
         final List<HexLine> hexLines = new ArrayList<HexLine>();
 
@@ -89,7 +72,7 @@ public class BasicHexData implements HexData {
         final List<List<HexChunk>> hexChunkList = hexChunkProcessor.convertAll(slicedBinaryData);
 
         for (List<HexChunk> hexChunks : hexChunkList) {
-            HexLine hexLine = hexLineFactory.create(address, hexChunks, width, grouping);
+            HexLine hexLine = hexLineFactory.create(address, hexChunks, width);
 
             hexLines.add(hexLine);
             address = address + width;

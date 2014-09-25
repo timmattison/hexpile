@@ -20,7 +20,6 @@ public abstract class AbstractHexLine implements HexLine {
     public static final int ADDRESS_LENGTH = 8;
     public static final int VALUE_LENGTH = 2;
     protected final int address;
-    private final int grouping;
     protected final int width;
     private Widget widget;
     private Map<String, List<HTML>> associatedHtml;
@@ -28,11 +27,9 @@ public abstract class AbstractHexLine implements HexLine {
 
     @Inject
     public AbstractHexLine(@Assisted("address") int address,
-                           @Assisted("width") int width,
-                           @Assisted("grouping") int grouping) {
+                           @Assisted("width") int width) {
         this.address = address;
         this.width = width;
-        this.grouping = grouping;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package client.implementations.widget;
 
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
@@ -20,9 +19,8 @@ public class HorizontalPanelHexLine extends AbstractHexLine {
     @Inject
     public HorizontalPanelHexLine(@Assisted("address") int address,
                                   @Assisted("data") List<Byte> data,
-                                  @Assisted("width") int width,
-                                  @Assisted("grouping") int grouping) {
-        super(address, width, grouping);
+                                  @Assisted("width") int width) {
+        super(address, width);
         this.data = data;
     }
 
@@ -70,8 +68,6 @@ public class HorizontalPanelHexLine extends AbstractHexLine {
     }
 
     private void addHexBytes() {
-        // TODO - Implement grouping support
-
         String separator = null;
 
         for (Byte currentByte : data) {

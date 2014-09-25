@@ -13,6 +13,5 @@ import java.util.List;
 public interface HexLineFactory {
     public HexLine create(@Assisted("address") int address,
                           @Assisted("hexChunks") List<HexChunk> hexChunks,
-                          @Assisted("width") int width,
-                          @Assisted("grouping") int grouping);
+                          @Assisted("width") int width);
 }

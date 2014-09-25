@@ -16,9 +16,8 @@ public class SpanBasedHighlightingTextHexLine extends AbstractHighlightingTextHe
     @Inject
     public SpanBasedHighlightingTextHexLine(@Assisted("address") int address,
                                             @Assisted("hexChunks") List<HexChunk> hexChunks,
-                                            @Assisted("width") int width,
-                                            @Assisted("grouping") int grouping) {
-        super(address, hexChunks, width, grouping);
+                                            @Assisted("width") int width) {
+        super(address, hexChunks, width);
     }
 
     private Panel getPanel() {

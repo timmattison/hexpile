@@ -20,9 +20,8 @@ public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
     @Inject
     public AbstractHighlightingTextHexLine(@Assisted("address") int address,
                                            @Assisted("hexChunks") List<HexChunk> hexChunks,
-                                           @Assisted("width") int width,
-                                           @Assisted("grouping") int grouping) {
-        super(address, width, grouping);
+                                           @Assisted("width") int width) {
+        super(address, width);
         this.hexChunks = hexChunks;
     }
 
@@ -39,8 +38,6 @@ public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
     }
 
     private void addHexBytesAndText() {
-        // TODO - Implement grouping support
-
         // Build the list of all hex data and text data we want to display
         List<HTML> hexList = new ArrayList<HTML>();
         List<HTML> textList = new ArrayList<HTML>();

@@ -12,9 +12,5 @@ public interface HexData {
 
     public void setWidth(int width);
 
-    public int getGrouping();
-
-    public void setGrouping(int grouping);
-
     public HexPanel getHexPanel();
 }
