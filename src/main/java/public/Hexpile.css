@@ -7,8 +7,7 @@
 }
 
 .hexpile {
-    /* 1.0em does nothing because it is overridden by the table's font size of "medium" */
-    font: 1.0em "Courier New", Courier, mono;
+    font: 0.7em "Courier New", Courier, mono;
 }
 
 .hexpileHighlighted {
