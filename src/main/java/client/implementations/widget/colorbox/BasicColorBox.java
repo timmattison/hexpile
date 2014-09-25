@@ -31,7 +31,7 @@ public class BasicColorBox implements ColorBox {
     }
 
     private void populatePanel() {
-        box.setStyleName("color-box");
+        box.setStyleName("hexpileColorBox");
         description.setHTML(text);
 
         HtmlHelpers.setBackgroundColor(box, color);
