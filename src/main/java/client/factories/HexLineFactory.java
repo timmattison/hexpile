@@ -1,6 +1,5 @@
 package client.factories;
 
-import client.dataprocessing.BinaryData;
 import client.dataprocessing.HexChunk;
 import client.interfaces.HexLine;
 import com.google.inject.assistedinject.Assisted;
