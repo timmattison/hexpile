@@ -5,7 +5,6 @@ package client.dataprocessing;
  */
 public class HexChunk {
     public String name;
-    public long startingAddress;
     public String hexData;
     public String text;
     public String textColor;

@@ -12,13 +12,5 @@ public interface HexChunkProcessor {
      * @param binaryDataList
      * @return
      */
-    public List<List<HexChunk>> convertAll(List<List<BinaryData>> binaryDataList);
-
-    /**
-     * Takes a list of binary data objects and converts them into hex chunks
-     *
-     * @param binaryDataLine
-     * @return
-     */
-    public List<HexChunk> convertLine(List<BinaryData> binaryDataLine);
+    public List<List<HexChunk>> convert(List<List<BinaryData>> binaryDataList);
 }

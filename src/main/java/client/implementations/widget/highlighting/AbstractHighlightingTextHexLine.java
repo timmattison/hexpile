@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by timmattison on 9/15/14.
  */
-public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
+abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
     private final List<HexChunk> hexChunks;
 
     @Inject
@@ -25,14 +25,14 @@ public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
         this.hexChunks = hexChunks;
     }
 
-    protected void addAddress() {
+    void addAddress() {
         String addressText = "0x" + HexHelpers.toHexNumberWithLeadingZeroes(address, ADDRESS_LENGTH);
         addAddress(addressText);
     }
 
     protected abstract void addAddress(String addressText);
 
-    protected void populatePanel() {
+    void populatePanel() {
         addAddress();
         addHexBytesAndText();
     }
@@ -127,7 +127,7 @@ public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
         }
     }
 
-    protected HTML getNewHtmlObject() {
+    HTML getNewHtmlObject() {
         return new HTML();
     }
 
@@ -143,7 +143,6 @@ public abstract class AbstractHighlightingTextHexLine extends AbstractHexLine {
     }
 
     private HTML createNewHtmlContainer() {
-        HTML html = getNewHtmlObject();
-        return html;
+        return getNewHtmlObject();
     }
 }

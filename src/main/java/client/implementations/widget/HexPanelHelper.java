@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Created by timmattison on 9/24/14.
  */
-public class HexPanelHelper {
+class HexPanelHelper {
     public static void addAllMouseovers(List<HexLine> hexLines) {
         Map<String, List<HTML>> combinedAssociatedHtml = HexLineHelper.getCombinedAssociatedHtml(hexLines);
 

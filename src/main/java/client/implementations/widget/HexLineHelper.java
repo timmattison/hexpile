@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * Created by timmattison on 9/24/14.
  */
-public class HexLineHelper {
+class HexLineHelper {
     public static Map<String, List<HTML>> getCombinedAssociatedHtml(List<HexLine> hexLines) {
         Map<String, List<HTML>> combinedAssociatedHtml = new HashMap<String, List<HTML>>();
 

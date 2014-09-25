@@ -42,26 +42,6 @@ public class BasicHexData implements HexData {
     }
 
     @Override
-    public boolean isShowingAddresses() {
-        return showAddresses;
-    }
-
-    @Override
-    public void setShowAddresses(boolean showAddresses) {
-        this.showAddresses = showAddresses;
-    }
-
-    @Override
-    public int getWidth() {
-        return width;
-    }
-
-    @Override
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    @Override
     public HexPanel getHexPanel() {
         final List<HexLine> hexLines = new ArrayList<HexLine>();
 
@@ -69,7 +49,7 @@ public class BasicHexData implements HexData {
 
         int address = initialAddress;
 
-        final List<List<HexChunk>> hexChunkList = hexChunkProcessor.convertAll(slicedBinaryData);
+        final List<List<HexChunk>> hexChunkList = hexChunkProcessor.convert(slicedBinaryData);
 
         for (List<HexChunk> hexChunks : hexChunkList) {
             HexLine hexLine = hexLineFactory.create(address, hexChunks, width);
@@ -79,9 +59,7 @@ public class BasicHexData implements HexData {
         }
 
         try {
-            HexPanel hexPanel = hexPanelFactory.create(hexLines);
-
-            return hexPanel;
+            return hexPanelFactory.create(hexLines);
         } catch (Exception e) {
             e.printStackTrace();
             throw new UnsupportedOperationException(e);

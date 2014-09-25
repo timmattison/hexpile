@@ -18,9 +18,9 @@ import java.util.List;
 /**
  * Created by timmattison on 9/15/14.
  */
-public class Hexpile implements EntryPoint {
-    public static final String OUTPUT = "_output";
-    public static final String HEXPILE = "hexpile_";
+class Hexpile implements EntryPoint {
+    private static final String OUTPUT = "_output";
+    private static final String HEXPILE = "hexpile_";
     private final HexpileGinjector injector = GWT.create(HexpileGinjector.class);
     private static HexpileGinjector staticInjector;
 
@@ -48,7 +48,7 @@ public class Hexpile implements EntryPoint {
         $wnd.reformat = @client.Hexpile::reformat(Ljava/lang/String;Ljava/lang/String;);
     }-*/;
 
-    public static void displayHighlightedBinary(String divId, String data) {
+    private static void displayHighlightedBinary(String divId, String data) {
         String[] lines = data.split("\\n");
         List<String> dataList = new ArrayList<String>();
 
@@ -83,7 +83,7 @@ public class Hexpile implements EntryPoint {
         }
     }
 
-    public static void reformat(String inputDivId, String outputDivId) {
+    private static void reformat(String inputDivId, String outputDivId) {
         RootPanel inputDiv = RootPanel.get(inputDivId);
 
         String data = inputDiv.getElement().getInnerText();

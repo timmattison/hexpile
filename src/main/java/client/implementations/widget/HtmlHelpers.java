@@ -8,7 +8,7 @@ import com.google.gwt.user.client.ui.HTML;
  */
 public class HtmlHelpers {
     private static final String COLOR = "color";
-    public static final String BACKGROUND_COLOR = "backgroundColor";
+    private static final String BACKGROUND_COLOR = "backgroundColor";
 
     public static void setColor(HTML html, String color) {
         html.getElement().getStyle().setProperty(COLOR, color);

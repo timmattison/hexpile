@@ -15,10 +15,10 @@ import java.util.Map;
  * Created by timmattison on 9/15/14.
  */
 public abstract class AbstractHexLine implements HexLine {
-    public static final String VALUE_SEPARATOR = "&nbsp;";
-    public static final String VALUE_PLACEHOLDER = "&nbsp;&nbsp;&nbsp;";
-    public static final int ADDRESS_LENGTH = 8;
-    public static final int VALUE_LENGTH = 2;
+    protected static final String VALUE_SEPARATOR = "&nbsp;";
+    protected static final String VALUE_PLACEHOLDER = "&nbsp;&nbsp;&nbsp;";
+    protected static final int ADDRESS_LENGTH = 8;
+    static final int VALUE_LENGTH = 8;
     protected final int address;
     protected final int width;
     private Widget widget;
@@ -43,7 +43,7 @@ public abstract class AbstractHexLine implements HexLine {
 
     protected abstract Widget finalizeWidget();
 
-    protected HTML createLabelWithText(String text) {
+    HTML createLabelWithText(String text) {
         HTML html = new HTML();
         html.setHTML(text);
         return html;

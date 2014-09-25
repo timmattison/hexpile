@@ -13,8 +13,8 @@ import java.util.Map;
  * Created by timmattison on 9/16/14.
  */
 public class BasicHexChunkProcessor implements HexChunkProcessor {
-    public static final String VALUE_SEPARATOR = "&nbsp;";
-    public static final int VALUE_LENGTH = 2;
+    private static final String VALUE_SEPARATOR = "&nbsp;";
+    private static final int VALUE_LENGTH = 2;
     private final ColorPicker colorPicker;
 
     @Inject
@@ -22,7 +22,7 @@ public class BasicHexChunkProcessor implements HexChunkProcessor {
         this.colorPicker = colorPicker;
     }
 
-    public List<List<HexChunk>> convertAll(List<List<BinaryData>> binaryDataList) {
+    public List<List<HexChunk>> convert(List<List<BinaryData>> binaryDataList) {
         Map<String, String> backgroundColors = new HashMap<String, String>();
         Map<String, String> textColors = new HashMap<String, String>();
         List<List<HexChunk>> output = new ArrayList<List<HexChunk>>();

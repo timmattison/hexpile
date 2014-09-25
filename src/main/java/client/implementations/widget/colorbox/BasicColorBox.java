@@ -12,8 +12,8 @@ public class BasicColorBox implements ColorBox {
     private final String color;
     private final String text;
     private HorizontalPanel horizontalPanel;
-    InlineHTML box = new InlineHTML();
-    InlineHTML description = new InlineHTML();
+    private final InlineHTML box = new InlineHTML();
+    private final InlineHTML description = new InlineHTML();
 
     @Inject
     public BasicColorBox(@Assisted("color") String color, @Assisted("text") String text) {

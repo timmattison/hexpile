@@ -34,7 +34,7 @@ public class HorizontalPanelHexLine extends AbstractHexLine {
         return horizontalPanel;
     }
 
-    protected void add(Label label) {
+    void add(Label label) {
         getPanel().add(label);
     }
 
@@ -91,12 +91,10 @@ public class HorizontalPanelHexLine extends AbstractHexLine {
     }
 
     private Label getTextLabel(String realValue) {
-        Label currentCharacter = createLabelWithText(String.valueOf(realValue));
-        return currentCharacter;
+        return createLabelWithText(String.valueOf(realValue));
     }
 
     private Label getValueLabel(int realValue) {
-        Label currentByteLabel = createLabelWithText(HexHelpers.toHexNumberWithLeadingZeroes(realValue, VALUE_LENGTH));
-        return currentByteLabel;
+        return createLabelWithText(HexHelpers.toHexNumberWithLeadingZeroes(realValue, VALUE_LENGTH));
     }
 }
