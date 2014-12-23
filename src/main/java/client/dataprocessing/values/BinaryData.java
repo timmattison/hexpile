@@ -1,4 +1,4 @@
-package client.dataprocessing;
+package client.dataprocessing.values;
 
 import java.util.List;
 

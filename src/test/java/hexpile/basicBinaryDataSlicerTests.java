@@ -1,7 +1,7 @@
 package hexpile;
 
 import client.dataprocessing.BasicBinaryDataSlicer;
-import client.dataprocessing.BinaryData;
+import client.dataprocessing.values.BinaryData;
 import org.junit.Assert;
 import org.junit.Test;
 

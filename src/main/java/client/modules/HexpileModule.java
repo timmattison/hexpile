@@ -2,8 +2,8 @@ package client.modules;
 
 import client.dataprocessing.BasicBinaryDataSlicer;
 import client.dataprocessing.BasicHexChunkProcessor;
-import client.dataprocessing.BinaryDataSlicer;
-import client.dataprocessing.HexChunkProcessor;
+import client.dataprocessing.interfaces.BinaryDataSlicer;
+import client.dataprocessing.interfaces.HexChunkProcessor;
 import client.factories.HexDataFactory;
 import client.factories.HexLineFactory;
 import client.factories.HexPanelFactory;

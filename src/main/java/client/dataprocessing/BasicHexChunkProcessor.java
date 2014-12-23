@@ -1,5 +1,8 @@
 package client.dataprocessing;
 
+import client.dataprocessing.interfaces.HexChunkProcessor;
+import client.dataprocessing.values.BinaryData;
+import client.dataprocessing.values.HexChunk;
 import client.implementations.widget.ColorPicker;
 import client.implementations.widget.HexHelpers;
 import com.google.inject.Inject;

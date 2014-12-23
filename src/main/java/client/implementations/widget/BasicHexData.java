@@ -1,9 +1,9 @@
 package client.implementations.widget;
 
-import client.dataprocessing.BinaryData;
-import client.dataprocessing.BinaryDataSlicer;
-import client.dataprocessing.HexChunk;
-import client.dataprocessing.HexChunkProcessor;
+import client.dataprocessing.values.BinaryData;
+import client.dataprocessing.interfaces.BinaryDataSlicer;
+import client.dataprocessing.values.HexChunk;
+import client.dataprocessing.interfaces.HexChunkProcessor;
 import client.factories.HexLineFactory;
 import client.factories.HexPanelFactory;
 import client.interfaces.HexData;

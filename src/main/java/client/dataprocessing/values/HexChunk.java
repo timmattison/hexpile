@@ -1,4 +1,4 @@
-package client.dataprocessing;
+package client.dataprocessing.values;
 
 /**
  * Created by timmattison on 9/22/14.

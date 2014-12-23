@@ -1,6 +1,6 @@
 package client.implementations.widget.highlighting;
 
-import client.dataprocessing.HexChunk;
+import client.dataprocessing.values.HexChunk;
 import com.google.gwt.user.client.ui.*;
 import com.google.inject.assistedinject.Assisted;
 

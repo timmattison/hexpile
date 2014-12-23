@@ -1,6 +1,6 @@
 package client.implementations.widget.highlighting;
 
-import client.dataprocessing.HexChunk;
+import client.dataprocessing.values.HexChunk;
 import client.implementations.widget.AbstractHexLine;
 import client.implementations.widget.HexHelpers;
 import client.implementations.widget.HtmlHelpers;

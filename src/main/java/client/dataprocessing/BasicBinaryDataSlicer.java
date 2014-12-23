@@ -1,5 +1,8 @@
 package client.dataprocessing;
 
+import client.dataprocessing.interfaces.BinaryDataSlicer;
+import client.dataprocessing.values.BinaryData;
+
 import java.util.ArrayList;
 import java.util.List;
 

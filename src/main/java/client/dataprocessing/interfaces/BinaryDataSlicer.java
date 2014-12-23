@@ -1,4 +1,6 @@
-package client.dataprocessing;
+package client.dataprocessing.interfaces;
+
+import client.dataprocessing.values.BinaryData;
 
 import java.util.List;
 

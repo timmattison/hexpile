@@ -1,6 +1,6 @@
 package client;
 
-import client.dataprocessing.BinaryData;
+import client.dataprocessing.values.BinaryData;
 import client.factories.HexDataFactory;
 import client.injectors.HexpileGinjector;
 import client.interfaces.HexData;

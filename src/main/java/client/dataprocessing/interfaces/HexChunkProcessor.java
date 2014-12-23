@@ -1,4 +1,7 @@
-package client.dataprocessing;
+package client.dataprocessing.interfaces;
+
+import client.dataprocessing.values.BinaryData;
+import client.dataprocessing.values.HexChunk;
 
 import java.util.List;
 
